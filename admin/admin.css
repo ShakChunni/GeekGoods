@@ -65,3 +65,52 @@
 .tbl-full {
   width: 100%;
 }
+
+table tr th {
+  border-bottom: 1px solid black;
+  padding: 1% 0;
+  text-align: left;
+}
+
+table tr td {
+  padding: 1% 0;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: green;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+    padding: 1%;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .btn-danger:hover {
+    background-color: darkred;
+    color: white;
+  }
