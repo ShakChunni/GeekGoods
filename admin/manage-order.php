@@ -5,8 +5,6 @@
         <h1>Manage orders</h1>
         <br /><br />
 
-        <a href="#" class="btn-primary">Add </a>
-
         <br /><br /><br />
         <table class="tbl-full">
             <tr>
@@ -20,8 +18,8 @@
                 <td>Safwat Raida</td>
                 <td>raida123</td>
                 <td>
-                    <a href="#" class="btn-secondary">Update Admin</a>
-                    <a href="#" class="btn-danger">Delete Admin</a>
+                    <a href="#" class="btn-secondary">Update Order</a>
+                    <a href="#" class="btn-danger">Delete Order</a>
                 </td>
             </tr>
             <tr>

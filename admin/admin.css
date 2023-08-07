@@ -103,14 +103,18 @@ table tr td {
 }
 
 .btn-danger {
-    background-color: red;
-    color: white;
-    padding: 1%;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .btn-danger:hover {
-    background-color: darkred;
-    color: white;
-  }
+  background-color: red;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background-color: darkred;
+  color: white;
+}
+
+.tbl-30 {
+  width: 30%;
+}
