@@ -52,22 +52,17 @@ if (isset($_POST['submit'])) {
         password='$password'
     ";
 
-    // 3. Executing Query and Saving Data into Datbase  
-    $conn = mysqli_connect('localhost', 'root', '');
-    $db_select = mysqli_select_db($conn, 'geeksgoods');
-    
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     // 4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
-    if($res==True){
-        echo "Data inserted";
+    if ($res == True) {
+        $_SESSION['add'] = "Admin Added Successfully";
+
+        header("location:" . SITEURL . 'admin/manage-admin.php');
+    } else {
+        $_SESSION['add'] = "Failed to Add Admin";
+        header("location:" . SITEURL . 'admin/add-admin.php');
     }
-    else{
-        echo "Failed to insert data";
-    }
-
-
-
 }
 
 ?>

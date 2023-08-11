@@ -1,3 +1,5 @@
+<?php include('../dbConnection/connection.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
