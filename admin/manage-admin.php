@@ -10,8 +10,14 @@
             echo $_SESSION['add']; //Displaying Session Message
             unset($_SESSION['add']); //Removing Session Message
         }
+
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']);
+        }
+
         ?>
-        
+
         <br /><br /><br />
         <a href="add-admin.php" class="btn-primary">Add Admin</a>
 
@@ -23,48 +29,46 @@
                 <th>Username</th>
                 <th>Actions</th>
             </tr>
-            <tr>
-                <td>1.</td>
-                <td>Safwat Raida</td>
-                <td>raida123</td>
-                <td>
-                    <a href="#" class="btn-secondary">Update Admin</a>
-                    <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>Safwat Raida</td>
-                <td>raida123</td>
-                <td>
-                    <a href="#" class="btn-secondary">Update Admin</a>
-                    <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>Safwat Raida</td>
-                <td>raida123</td>
-                <td>
-                    <a href="#" class="btn-secondary">Update Admin</a>
-                    <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1.</td>
-                <td>Safwat Raida</td>
-                <td>raida123</td>
-                <td>
-                    <a href="#" class="btn-secondary">Update Admin</a>
-                    <a href="#" class="btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-        </table>
 
 
-        <div class="clearfix"></div>
+            <?php
+            $sql = "SELECT * FROM tbl_admin";
+            $res = mysqli_query($conn, $sql);
+            $serial = 1;
+
+            if ($res == TRUE) {
+                $count = mysqli_num_rows($res); // Function to get all the rows in database
+                if ($count > 0) {
+                    while ($rows = mysqli_fetch_assoc($res)) {
+                        //Using While loop to get all the data from database
+
+                        //Get individual data
+                        $id = $rows['id'];
+                        $full_name = $rows['full_name'];
+                        $username = $rows['username'];
+
+                        //Display the values in our table
+            ?>
+                        <tr>
+                            <td><?php echo $serial++; ?></td>
+                            <td><?php echo $full_name; ?></td>
+                            <td><?php echo $username; ?></td>
+                            <td>
+                                <a href="#" class="btn-secondary">Update Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                            </td>
+                        </tr>
+            <?php
+                    }
+                }
+            }
+
+
+            ?>
+
+
+
+
+            <div class="clearfix"></div>
     </div>
 </div>
-
-
-<?php include('reusables/footer.php'); ?>
