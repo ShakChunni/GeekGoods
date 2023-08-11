@@ -118,3 +118,13 @@ table tr td {
 .tbl-30 {
   width: 30%;
 }
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}

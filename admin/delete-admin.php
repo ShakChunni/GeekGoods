@@ -1,3 +1,5 @@
+
+
 <?php 
 
     include('../dbConnection/connection.php');
@@ -7,7 +9,7 @@
     $res = mysqli_query($conn, $sql); 
     
     if($res==TRUE) {
-        $_SESSION['delete'] = "Admin Deleted Successfully";
+        $_SESSION['delete'] = "<div class='success'>Admin Deleted Successfully.</div>";
         header("location:".SITEURL.'admin/manage-admin.php');
     } else {
         $_SESSION['delete'] = "Failed to Delete Admin";
