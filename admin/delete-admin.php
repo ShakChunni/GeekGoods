@@ -1,5 +1,3 @@
-
-
 <?php 
 
     include('../dbConnection/connection.php');

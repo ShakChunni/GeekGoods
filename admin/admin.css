@@ -128,3 +128,31 @@ table tr td {
   color: red;
   font-weight: bold;
 }
+
+.btn-pass {
+  background-color: cyan;
+  color: white;
+  padding: 1%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-pass:hover {
+  background-color: darkcyan;
+  color: white;
+}
+
+.login{
+  border: 1px solid grey;
+  width: 20%;
+  margin: 10% auto;
+  padding: 2%;
+}
+
+
+.login-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2%;
+  border: 1px solid #dfe4ea;
+}
