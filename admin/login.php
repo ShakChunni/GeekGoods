@@ -4,62 +4,7 @@
 
 <head>
     <title>GeekGoods - Login</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .login {
-            width: 500px;
-            padding: 35px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .error {
-            color: #f44336;
-        }
-
-        .success {
-            color: #4caf50;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>

@@ -4,62 +4,7 @@
 
 <head>
     <title>GeekGoods - Customer Login</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .login {
-            width: 300px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .error {
-            color: #f44336;
-        }
-
-        .success {
-            color: #4caf50;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -76,6 +21,12 @@
             echo $_SESSION['no-login-message'];
             unset($_SESSION['no-login-message']);
         }
+        
+        // Show "Signup Successful" message from signup.php
+        if (isset($_SESSION['signup']) && $_SESSION['signup'] === "success") {
+            echo "<div class='success text-center'>Signup Successful</div>";
+            unset($_SESSION['signup']);
+        }
         ?>
 
         <form action="" method="POST">
@@ -86,6 +37,11 @@
             <br><br>
             <input type="submit" name="submit" value="Login" class="btn-primary">
         </form>
+
+        <!-- Add a "Signup" button that redirects to signup.php -->
+        <div class="signup-link">
+            <a href="signup.php" class="btn-signup">Signup</a>
+        </div>
     </div>
 </body>
 
@@ -103,10 +59,11 @@ if (isset($_POST['submit'])) {
 
     if ($count == 1) {
         $_SESSION['login'] = "<div class='success text-center'>Login Successful</div>";
-
+        // Redirect to customer dashboard or homepage
+        header('location:' . SITEURL . 'customer/index.php');
     } else {
         $_SESSION['login'] = "<div class='error text-center'>Login Failed</div>";
-        header('location:' . SITEURL);
+        header('location:' . SITEURL . 'customer/login.php');
     }
 }
 ?>
