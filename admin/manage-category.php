@@ -5,7 +5,7 @@
         <h1>Categories</h1>
         <br /><br />
 
-        <a href="#" class="btn-primary">Add Category</a>
+        <a href="/admin/add-category.php" class="btn-primary">Add Category</a>
 
         <br /><br /><br />
         <table class="tbl-full">
