@@ -1,7 +1,14 @@
+/* General Styles */
+
 * {
-  margin: 0 0;
-  padding: 0 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
 }
 
 .container {
@@ -10,12 +17,16 @@
   padding: 1%;
 }
 
-.img-responsive {
-  width: 100%;
+/* Typography */
+
+h2 {
+  color: #2f3542;
+  font-size: 2rem;
+  margin-bottom: 2%;
 }
 
-.img-curve {
-  border-radius: 15px;
+h3 {
+  font-size: 1.5rem;
 }
 
 .text-right {
@@ -34,10 +45,7 @@
   color: white;
 }
 
-.clearfix {
-  clear: both;
-  float: none;
-}
+/* Links */
 
 a {
   color: #ff6b81;
@@ -48,52 +56,49 @@ a:hover {
   color: #ff4757;
 }
 
+/* Buttons */
+
 .btn {
   padding: 1%;
   border: none;
   font-size: 1rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn-primary {
   background-color: #ff6b81;
   color: white;
-  cursor: pointer;
 }
 
 .btn-primary:hover {
-  color: white;
   background-color: #ff4757;
 }
 
-h2 {
-  color: #2f3542;
-  font-size: 2rem;
-  margin-bottom: 2%;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-.float-container {
-  position: relative;
-}
-
-.float-text {
-  position: absolute;
-  bottom: 50px;
-  left: 40%;
-}
-
-fieldset {
-  border: 1px solid white;
-  margin: 5%;
-  padding: 3%;
+.btn-order {
+  display: inline-block;
+  background-color: #ff6b81;
+  color: white;
+  padding: 10px 20px;
   border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-/* CSS for navbar section */
+.btn-order:hover {
+  background-color: #ff4757;
+  color: white;
+}
+
+/* Clearfix */
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Logo and Menu */
 
 .logo {
   width: 10%;
@@ -114,7 +119,7 @@ fieldset {
   font-weight: bold;
 }
 
-/* CSS for Product Search Section */
+/* Product Search Section */
 
 .products-search {
   background-image: url(../images/bg.jpg);
@@ -132,7 +137,8 @@ fieldset {
   border-radius: 5px;
 }
 
-/* CSS for Categories */
+/* Categories Section */
+
 .categories {
   padding: 4% 0;
 }
@@ -143,43 +149,42 @@ fieldset {
   margin: 2%;
 }
 
-/* CSS for Product Menu */
-.products-menu {
+/* Product Menu Section */
+
+.product-menu {
   background-color: #ececec;
   padding: 4% 0;
 }
 
-.products-menu-box {
-  width: 43%;
+.product-menu-box {
+  width: 30%; /* Updated width to fit three products in a row */
   margin: 1%;
-  padding: 2%;
-  float: left;
-  background-color: white;
-  border-radius: 15px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
 }
 
-.products-menu-img {
-  width: 20%;
-  float: left;
+.product-menu-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-.products-menu-desc {
-  width: 70%;
-  float: left;
-  margin-left: 8%;
+.product-menu-desc {
+  padding: 10px 0;
 }
 
-.products-price {
-  font-size: 1.2rem;
-  margin: 2% 0;
+.product-detail {
+  font-size: 14px;
+  color: #888;
 }
 
-.products-detail {
-  font-size: 1rem;
-  color: #747d8c;
-}
+/* Social Section */
 
-/* CSS for Social */
 .social ul {
   list-style-type: none;
 }
@@ -189,7 +194,8 @@ fieldset {
   padding: 1%;
 }
 
-/* for Order Section */
+/* Order Section */
+
 .order {
   width: 50%;
   margin: 0 auto;
@@ -209,7 +215,7 @@ fieldset {
   font-weight: bold;
 }
 
-/* CSS for Mobile Size or Smaller Screen */
+/* Mobile Styles */
 
 @media only screen and (max-width: 768px) {
   .logo {
@@ -250,11 +256,7 @@ fieldset {
     margin: 4% auto;
   }
 
-  .products-menu {
-    padding: 20% 0;
-  }
-
-  .products-menu-box {
+  .product-menu-box {
     width: 90%;
     padding: 5%;
     margin-bottom: 5%;
@@ -267,4 +269,118 @@ fieldset {
   .order {
     width: 100%;
   }
+}
+
+/* Additional CSS for the order form */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.order-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-img img {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.product-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.order-form input[type="text"],
+.order-form input[type="number"],
+.order-form input[type="email"],
+.order-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.order-form textarea {
+  resize: vertical;
+}
+
+.order-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-form button:hover {
+  background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+  .order-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Order Success section styles */
+.order-success {
+  background-color: #fff;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-success h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.order-success p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.order-success .btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-success .btn:hover {
+  background-color: #555;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
 }

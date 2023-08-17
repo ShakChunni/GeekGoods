@@ -1,21 +1,3 @@
-<?php
-// Start the session
-include('../dbConnection/connection.php');
-
-
-
-// Retrieve the customer ID from the session
-if (isset($_SESSION['customer_username'])) {
-  $customer_username = $_SESSION['customer_username'];
-  // Use $customer_id as needed in your index.php
-} else {
-  // Redirect to the login page if not logged in
-  header('location:' . SITEURL . 'customer/login.php');
-}
-
-echo $customer_username;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +5,7 @@ echo $customer_username;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GeekGoods</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -32,7 +14,7 @@ echo $customer_username;
     <div class="container">
       <div class="logo">
         <a href="#" title="Logo">
-          <img src="../images/logo.png" alt="Restaurant Logo" class="img-responsive" />
+          <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive" />
         </a>
       </div>
       <div class="menu text-right">
@@ -47,7 +29,7 @@ echo $customer_username;
             <a href="products.php">Products</a>
           </li>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="customer/login.php">Login</a>
           </li>
         </ul>
       </div>
@@ -72,6 +54,8 @@ echo $customer_username;
       <h2 class="text-center">Featured Products</h2>
 
       <?php
+      include('dbConnection/connection.php'); // Include your database connection file
+
       $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND featured='Yes' LIMIT 6";
       $res = mysqli_query($conn, $sql);
 
@@ -84,15 +68,14 @@ echo $customer_username;
       ?>
           <div class="product-menu-box">
             <div class="product-menu-img">
-              <img src="../images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve" />
+              <img src="images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve" />
             </div>
             <div class="product-menu-desc">
               <h4><?php echo $product_title; ?></h4>
               <p class="product-price">$<?php echo $product_price; ?></p>
               <p class="product-detail"><?php echo $product_description; ?></p>
               <br />
-             
-              <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>&customer_username=<?php echo $customer_username; ?>" class="btn btn-order">Order Now</a>
+              <a href="customer/login.php?redirect=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="btn btn-order">Order Now</a>
             </div>
           </div>
       <?php
@@ -104,7 +87,7 @@ echo $customer_username;
     </div>
 
     <p class="text-center">
-      <a href="products.php">See All Products</a>
+      <a href="#">See All Products</a>
     </p>
   </section>
 

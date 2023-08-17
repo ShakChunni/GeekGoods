@@ -1,54 +1,27 @@
-<?php
-// Start the session
-include('../dbConnection/connection.php');
-
-
-
-// Retrieve the customer ID from the session
-if (isset($_SESSION['customer_username'])) {
-  $customer_username = $_SESSION['customer_username'];
-  // Use $customer_id as needed in your index.php
-} else {
-  // Redirect to the login page if not logged in
-  header('location:' . SITEURL . 'customer/login.php');
-}
-
-echo $customer_username;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GeekGoods</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8">
+  <!-- Important to make website responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeekGoods - Products</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <!-- Navbar Section Starts Here -->
   <section class="navbar">
     <div class="container">
       <div class="logo">
         <a href="#" title="Logo">
-          <img src="../images/logo.png" alt="Restaurant Logo" class="img-responsive" />
+          <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
         </a>
       </div>
       <div class="menu text-right">
         <ul>
-          <li>
-            <a href="index.php">Home</a>
-          </li>
-          <li>
-            <a href="categories.php">Categories</a>
-          </li>
-          <li>
-            <a href="products.php">Products</a>
-          </li>
-          <li>
-            <a href="logout.php">Logout</a>
-          </li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="categories.php">Categories</a></li>
+          <li><a href="products.php">Products</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>
       <div class="clearfix"></div>
@@ -56,7 +29,7 @@ echo $customer_username;
   </section>
   <!-- Navbar Section Ends Here -->
 
-  <!-- Product Search Section -->
+  <!-- PRODUCT SEARCH Section Starts Here -->
   <section class="products-search text-center">
     <div class="container">
       <form action="products-search.php" method="POST">
@@ -65,13 +38,15 @@ echo $customer_username;
       </form>
     </div>
   </section>
+  <!-- PRODUCT SEARCH Section Ends Here -->
 
-  <!-- Featured Product Section -->
-  <section class="product-menu">
+<!-- Product Menu Section -->
+<section class="product-menu">
     <div class="container">
-      <h2 class="text-center">Featured Products</h2>
-
+      <!-- Loop through your products -->
       <?php
+      include('../dbConnection/connection.php'); // Include your database connection file
+
       $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND featured='Yes' LIMIT 6";
       $res = mysqli_query($conn, $sql);
 
@@ -91,32 +66,31 @@ echo $customer_username;
               <p class="product-price">$<?php echo $product_price; ?></p>
               <p class="product-detail"><?php echo $product_description; ?></p>
               <br />
-             
-              <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>&customer_username=<?php echo $customer_username; ?>" class="btn btn-order">Order Now</a>
+              <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>" class="btn btn-order">Order Now</a>
             </div>
           </div>
       <?php
         }
       }
       ?>
-
       <div class="clearfix"></div>
     </div>
-
     <p class="text-center">
       <a href="products.php">See All Products</a>
     </p>
   </section>
+  <!-- PRODUCT MENU Section Ends Here -->
 
-  <!-- Social Section -->
+  <!-- social Section Starts Here -->
   <section class="social">
     <!-- ... Social media icons code ... -->
   </section>
+  <!-- social Section Ends Here -->
 
-  <!-- Footer Section -->
+  <!-- footer Section Starts Here -->
   <section class="footer">
     <!-- ... Footer section code ... -->
   </section>
+  <!-- footer Section Ends Here -->
 </body>
-
 </html>

@@ -49,20 +49,31 @@
     <!-- PRODUCT SEARCH Section Starts Here -->
     <section class="products-search text-center">
       <div class="container">
-        <h2>
-          Products on Your Search <a href="#" class="text-white">"Momo"</a>
-        </h2>
+        <form action="product-search.php" method="POST">
+          <input
+            type="search"
+            name="search"
+            placeholder="Search for Product.."
+            required
+          />
+          <input
+            type="submit"
+            name="submit"
+            value="Search"
+            class="btn btn-primary"
+          />
+        </form>
       </div>
     </section>
     <!-- PRODUCT SEARCH Section Ends Here -->
 
     <!-- PRODUCT MENU Section Starts Here -->
-    <section class="products-menu">
+    <section class="product-menu">
       <div class="container">
-        <h2 class="text-center">Products Menu</h2>
+        <h2 class="text-center">Product Menu</h2>
 
-        <div class="products-menu-box">
-          <div class="products-menu-img">
+        <div class="product-menu-box">
+          <div class="product-menu-img">
             <img
               src="images/menu-pizza.jpg"
               alt="Chicke Hawain Pizza"
@@ -70,10 +81,10 @@
             />
           </div>
 
-          <div class="products-menu-desc">
+          <div class="product-menu-desc">
             <h4>Product Title</h4>
-            <p class="products-price">$2.3</p>
-            <p class="products-detail">
+            <p class="product-price">$2.3</p>
+            <p class="product-detail">
               Made with Italian Sauce, Chicken, and organic vegetables.
             </p>
             <br />
@@ -82,8 +93,8 @@
           </div>
         </div>
 
-        <div class="products-menu-box">
-          <div class="products-menu-img">
+        <div class="product-menu-box">
+          <div class="product-menu-img">
             <img
               src="images/menu-burger.jpg"
               alt="Chicke Hawain Pizza"
@@ -91,10 +102,10 @@
             />
           </div>
 
-          <div class="products-menu-desc">
+          <div class="product-menu-desc">
             <h4>Smoky Burger</h4>
-            <p class="products-price">$2.3</p>
-            <p class="products-detail">
+            <p class="product-price">$2.3</p>
+            <p class="product-detail">
               Made with Italian Sauce, Chicken, and organic vegetables.
             </p>
             <br />
@@ -103,8 +114,8 @@
           </div>
         </div>
 
-        <div class="products-menu-box">
-          <div class="products-menu-img">
+        <div class="product-menu-box">
+          <div class="product-menu-img">
             <img
               src="images/menu-burger.jpg"
               alt="Chicke Hawain Burger"
@@ -112,10 +123,10 @@
             />
           </div>
 
-          <div class="products-menu-desc">
+          <div class="product-menu-desc">
             <h4>Nice Burger</h4>
-            <p class="products-price">$2.3</p>
-            <p class="products-detail">
+            <p class="product-price">$2.3</p>
+            <p class="product-detail">
               Made with Italian Sauce, Chicken, and organic vegetables.
             </p>
             <br />
@@ -124,8 +135,8 @@
           </div>
         </div>
 
-        <div class="products-menu-box">
-          <div class="products-menu-img">
+        <div class="product-menu-box">
+          <div class="product-menu-img">
             <img
               src="images/menu-pizza.jpg"
               alt="Chicke Hawain Pizza"
@@ -133,10 +144,10 @@
             />
           </div>
 
-          <div class="products-menu-desc">
+          <div class="product-menu-desc">
             <h4>Product Title</h4>
-            <p class="products-price">$2.3</p>
-            <p class="products-detail">
+            <p class="product-price">$2.3</p>
+            <p class="product-detail">
               Made with Italian Sauce, Chicken, and organic vegetables.
             </p>
             <br />
@@ -145,8 +156,8 @@
           </div>
         </div>
 
-        <div class="products-menu-box">
-          <div class="products-menu-img">
+        <div class="product-menu-box">
+          <div class="product-menu-img">
             <img
               src="images/menu-pizza.jpg"
               alt="Chicke Hawain Pizza"
@@ -154,10 +165,10 @@
             />
           </div>
 
-          <div class="products-menu-desc">
+          <div class="product-menu-desc">
             <h4>Product Title</h4>
-            <p class="products-price">$2.3</p>
-            <p class="products-detail">
+            <p class="product-price">$2.3</p>
+            <p class="product-detail">
               Made with Italian Sauce, Chicken, and organic vegetables.
             </p>
             <br />
@@ -166,8 +177,8 @@
           </div>
         </div>
 
-        <div class="products-menu-box">
-          <div class="products-menu-img">
+        <div class="product-menu-box">
+          <div class="product-menu-img">
             <img
               src="images/menu-momo.jpg"
               alt="Chicke Hawain Momo"
@@ -175,10 +186,10 @@
             />
           </div>
 
-          <div class="products-menu-desc">
+          <div class="product-menu-desc">
             <h4>Chicken Steam Momo</h4>
-            <p class="products-price">$2.3</p>
-            <p class="products-detail">
+            <p class="product-price">$2.3</p>
+            <p class="product-detail">
               Made with Italian Sauce, Chicken, and organic vegetables.
             </p>
             <br />

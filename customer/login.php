@@ -1,12 +1,13 @@
-<?php include('../dbConnection/connection.php'); ?>
+<?php
+// Start the session
+include('../dbConnection/connection.php');
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>GeekGoods - Customer Login</title>
     <link rel="stylesheet" href="../css/login.css">
 </head>
-
 <body>
     <div class="login">
         <h1 class="text-center">Customer Login</h1>
@@ -43,27 +44,29 @@
             <a href="signup.php" class="btn-signup">Signup</a>
         </div>
     </div>
-</body>
 
-</html>
+    <?php
+    if (isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = sha1($_POST['password']);
 
-<?php
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = sha1($_POST['password']);
+        $sql = "SELECT * FROM tbl_customer WHERE username='$username' AND password='$password'";
+        $res = mysqli_query($conn, $sql);
 
-    $sql = "SELECT * FROM tbl_customer WHERE username='$username' AND password='$password'";
-    $res = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($res);
 
-    $count = mysqli_num_rows($res);
+        if ($count == 1) {
+            $row = mysqli_fetch_assoc($res);
+            $_SESSION['customer_username'] = $row['username']; // Store customer ID in the session
 
-    if ($count == 1) {
-        $_SESSION['login'] = "<div class='success text-center'>Login Successful</div>";
-        // Redirect to customer dashboard or homepage
-        header('location:' . SITEURL . 'customer/index.php');
-    } else {
-        $_SESSION['login'] = "<div class='error text-center'>Login Failed</div>";
-        header('location:' . SITEURL . 'customer/login.php');
+            $_SESSION['login'] = "<div class='success text-center'>Login Successful</div>";
+            // Redirect to customer dashboard or homepage
+            header('location:' . SITEURL . 'customer/index.php');
+        } else {
+            $_SESSION['login'] = "<div class='error text-center'>Login Failed</div>";
+            header('location:' . SITEURL . 'customer/login.php');
+        }
     }
-}
-?>
+    ?>
+</body>
+</html>
