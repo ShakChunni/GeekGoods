@@ -33,7 +33,7 @@
             <tr>
                 <th>S.N.</th>
                 <th>Category Title</th>
-                <th>Image Name</th>
+                <th>Image</th>
                 <th>Featured</th>
                 <th>Active</th>
                 <th>Actions</th>
@@ -57,7 +57,17 @@
                         <tr>
                             <td><?php echo $serial++; ?></td>
                             <td><?php echo $category_title; ?></td>
-                            <td><?php echo $image_name; ?></td>
+                            <td>
+                                <?php
+                                if ($image_name != "") {
+                                ?>
+                                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px">
+                                <?php
+                                } else {
+                                    echo "Image not available";
+                                }
+                                ?>
+                            </td>
                             <td><?php echo $featured; ?></td>
                             <td><?php echo $active; ?></td>
                             <td>

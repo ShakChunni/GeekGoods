@@ -6,7 +6,7 @@
 
         <br></br>
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 
             <table class="tbl-30">
                 <tr>
@@ -14,8 +14,8 @@
                     <td><input type="text" name="category_title" placeholder="Enter category title"></td>
                 </tr>
                 <tr>
-                    <td>Image Name:</td>
-                    <td><input type="text" name="image_name" placeholder="Enter image name"></td>
+                    <td>Image:</td>
+                    <td><input type="file" name="image"></td>
                 </tr>
                 <tr>
                     <td>Featured:</td>
@@ -42,14 +42,19 @@
 </div>
 <?php include('reusables/footer.php'); ?>
 
-
 <?php
 if (isset($_POST['submit'])) {
 
     $category_title = $_POST['category_title'];
-    $image_name = $_POST['image_name'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];
+
+    // Uploading the image
+    $image_name = $_FILES['image']['name'];
+    $tmp_name = $_FILES['image']['tmp_name'];
+    $upload_path = "../images/category";
+
+    move_uploaded_file($tmp_name, $upload_path . $image_name);
 
     $sql = "INSERT INTO tbl_category (title, image_name, featured, active)
             VALUES ('$category_title', '$image_name', '$featured', '$active')";

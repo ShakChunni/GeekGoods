@@ -24,7 +24,7 @@
         }
         ?>
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 
             <table class="tbl-30">
                 <tr>
@@ -32,8 +32,8 @@
                     <td><input type="text" name="category_title" value="<?php echo $category_title ?>"></td>
                 </tr>
                 <tr>
-                    <td>Image Name:</td>
-                    <td><input type="text" name="image_name" value="<?php echo $image_name ?>"></td>
+                    <td>Upload Image:</td>
+                    <td><input type="file" name="image"></td>
                 </tr>
                 <tr>
                     <td>Featured:</td>
@@ -64,10 +64,28 @@
 if (isset($_POST["submit"])) {
     $id = $_POST['id'];
     $category_title = $_POST['category_title'];
-    $image_name = $_POST['image_name'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];
 
+    // Handle image upload
+    if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != "") {
+        $image_name = $_FILES['image']['name'];
+        $image_tmp = $_FILES['image']['tmp_name'];
+        $image_type = $_FILES['image']['type'];
+
+        // Get the extension of the image
+        $arr = explode('.', $image_name);
+        $ext = end($arr);
+
+        // Rename the image
+        $image_name = "Category_" . rand(000, 999) . '.' . $ext;
+
+        // Upload the image
+        $upload_path = "../images/category/" . $image_name;
+        move_uploaded_file($image_tmp, $upload_path);
+    }
+
+    // Update the category information
     $sql = "UPDATE tbl_category SET
                 title = '$category_title',
                 image_name = '$image_name',
