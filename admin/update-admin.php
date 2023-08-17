@@ -48,7 +48,7 @@
 
 <?php
 
-// Check whether the submit button is clicked or not
+// Check whether the submit button is clicked or notd
 if (isset($_POST["submit"])) {
     $id = $_POST['id'];
     $full_name = $_POST['full_name'];

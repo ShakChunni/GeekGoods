@@ -73,7 +73,7 @@ if (isset($_POST["submit"])) {
         $image_tmp = $_FILES['image']['tmp_name'];
         $image_type = $_FILES['image']['type'];
 
-        // Get the extension of the image
+        // Get the extension of the images
         $arr = explode('.', $image_name);
         $ext = end($arr);
 
