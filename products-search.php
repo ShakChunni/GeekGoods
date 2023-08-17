@@ -12,13 +12,12 @@
     <div class="container">
       <div class="logo">
         <a href="index.php" title="Logo">
-          <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+          <img src="images/logo.jpg" class="img-responsive">
         </a>
       </div>
       <div class="menu text-right">
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="categories.php">Categories</a></li>
           <li><a href="products.php">Products</a></li>
           <li><a href="select-login.html">Login</a></li>
         </ul>

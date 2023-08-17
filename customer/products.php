@@ -5,15 +5,15 @@
   <!-- Important to make website responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeekGoods - Products</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <!-- Navbar Section Starts Here -->
   <section class="navbar">
     <div class="container">
       <div class="logo">
-        <a href="#" title="Logo">
-          <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+        <a href="index.php" title="Logo">
+          <img src="../images/logo.jpg" class="img-responsive">
         </a>
       </div>
       <div class="menu text-right">

@@ -178,20 +178,26 @@ a:hover {
   padding: 10px 0;
 }
 
-.product-detail {
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.category-title {
+  font-style: italic;
   font-size: 14px;
-  color: #888;
+  color: #777;
 }
 
-/* Social Section */
-
-.social ul {
-  list-style-type: none;
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e74c3c;
 }
 
-.social ul li {
-  display: inline;
-  padding: 1%;
+.product-detail {
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 /* Order Section */
@@ -260,10 +266,6 @@ a:hover {
     width: 90%;
     padding: 5%;
     margin-bottom: 5%;
-  }
-
-  .social {
-    padding: 5% 0;
   }
 
   .order {

@@ -27,6 +27,49 @@ $result = mysqli_query($conn, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Additional Cart Page Styles */
+
+        .cart {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cart h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .cart-table {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .cart-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        .cart-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .cart-table td {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,8 +82,8 @@ $result = mysqli_query($conn, $sql);
     <!-- Cart Section -->
     <section class="cart">
         <div class="container">
-            <h2>Your Cart</h2>
             <div class="cart-table">
+                <h2>Orders</h2>
                 <table>
                     <thead>
                         <tr>

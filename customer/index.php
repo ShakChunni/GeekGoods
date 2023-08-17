@@ -32,7 +32,7 @@ echo $customer_username;
     <div class="container">
       <div class="logo">
         <a href="#" title="Logo">
-          <img src="../images/logo.png" alt="Restaurant Logo" class="img-responsive" />
+          <img src="../images/logo.jpg" class="img-responsive" />
         </a>
       </div>
       <div class="menu text-right">
@@ -41,13 +41,13 @@ echo $customer_username;
             <a href="index.php">Home</a>
           </li>
           <li>
-            <a href="categories.php">Categories</a>
-          </li>
-          <li>
             <a href="products.php">Products</a>
           </li>
           <li>
             <a href="logout.php">Logout</a>
+          </li>
+          <li>
+            <a href="cart.php">Cart</a>
           </li>
         </ul>
       </div>

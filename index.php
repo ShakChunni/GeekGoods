@@ -13,8 +13,8 @@
   <section class="navbar">
     <div class="container">
       <div class="logo">
-        <a href="#" title="Logo">
-          <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive" />
+        <a href="index.php" title="Logo">
+          <img src="images/logo.jpg" class="img-responsive" />
         </a>
       </div>
       <div class="menu text-right">
@@ -23,13 +23,10 @@
             <a href="index.php">Home</a>
           </li>
           <li>
-            <a href="categories.php">Categories</a>
-          </li>
-          <li>
             <a href="products.php">Products</a>
           </li>
           <li>
-            <a href="customer/login.php">Login</a>
+            <a href="select-login.html">Login</a>
           </li>
         </ul>
       </div>
@@ -65,19 +62,35 @@
           $product_price = $row['price'];
           $product_description = $row['description'];
           $product_image = $row['image_name'];
+          $product_category_id = $row['category_id']; // Retrieve category ID from tbl_products
+
+          // Retrieve category title based on category_id
+          $category_query = "SELECT title FROM tbl_category WHERE id='$product_category_id'";
+          $category_result = mysqli_query($conn, $category_query);
+
+          if ($category_result && mysqli_num_rows($category_result) > 0) {
+            $category_row = mysqli_fetch_assoc($category_result);
+            $category_title = $category_row['title'];
+          } else {
+            $category_title = 'Uncategorized';
+          }
       ?>
           <div class="product-menu-box">
             <div class="product-menu-img">
               <img src="images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve" />
             </div>
             <div class="product-menu-desc">
-              <h4><?php echo $product_title; ?></h4>
+              <h4 class="product-title"><?php echo $product_title; ?></h4>
+              <p class="product-category">
+                <em class="category-title"><?php echo $category_title; ?></em>
+              </p>
               <p class="product-price">$<?php echo $product_price; ?></p>
               <p class="product-detail"><?php echo $product_description; ?></p>
               <br />
               <a href="customer/login.php?redirect=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="btn btn-order">Order Now</a>
             </div>
           </div>
+
       <?php
         }
       }
@@ -87,19 +100,11 @@
     </div>
 
     <p class="text-center">
-      <a href="#">See All Products</a>
+      <a href="products.php">See All Products</a>
     </p>
   </section>
 
-  <!-- Social Section -->
-  <section class="social">
-    <!-- ... Social media icons code ... -->
-  </section>
 
-  <!-- Footer Section -->
-  <section class="footer">
-    <!-- ... Footer section code ... -->
-  </section>
 </body>
 
 </html>

@@ -1,238 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Important to make website responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GeekGoods</title>
 
-    <!-- Link our CSS file -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeekGoods</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-  <body>
-    <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-      <div class="container">
-        <div class="logo">
-          <a href="#" title="Logo">
-            <img
-              src="images/logo.png"
-              alt="Restaurant Logo"
-              class="img-responsive"
-            />
-          </a>
-        </div>
-
-        <div class="menu text-right">
-          <ul>
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="categories.html">Categories</a>
-            </li>
-            <li>
-              <a href="products.html">Products</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="clearfix"></div>
+<body>
+  <!-- Navbar Section Starts Here -->
+  <section class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.php" title="Logo">
+          <img src="images/logo.jpg" class="img-responsive" />
+        </a>
       </div>
-    </section>
-    <!-- Navbar Section Ends Here -->
-
-    <!-- PRODUCT SEARCH Section Starts Here -->
-    <section class="products-search text-center">
-      <div class="container">
-        <form action="product-search.php" method="POST">
-          <input
-            type="search"
-            name="search"
-            placeholder="Search for Product.."
-            required
-          />
-          <input
-            type="submit"
-            name="submit"
-            value="Search"
-            class="btn btn-primary"
-          />
-        </form>
-      </div>
-    </section>
-    <!-- PRODUCT SEARCH Section Ends Here -->
-
-    <!-- PRODUCT MENU Section Starts Here -->
-    <section class="product-menu">
-      <div class="container">
-        <h2 class="text-center">Product Menu</h2>
-
-        <div class="product-menu-box">
-          <div class="product-menu-img">
-            <img
-              src="images/menu-pizza.jpg"
-              alt="Chicke Hawain Pizza"
-              class="img-responsive img-curve"
-            />
-          </div>
-
-          <div class="product-menu-desc">
-            <h4>Product Title</h4>
-            <p class="product-price">$2.3</p>
-            <p class="product-detail">
-              Made with Italian Sauce, Chicken, and organic vegetables.
-            </p>
-            <br />
-
-            <a href="#" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="product-menu-box">
-          <div class="product-menu-img">
-            <img
-              src="images/menu-burger.jpg"
-              alt="Chicke Hawain Pizza"
-              class="img-responsive img-curve"
-            />
-          </div>
-
-          <div class="product-menu-desc">
-            <h4>Smoky Burger</h4>
-            <p class="product-price">$2.3</p>
-            <p class="product-detail">
-              Made with Italian Sauce, Chicken, and organic vegetables.
-            </p>
-            <br />
-
-            <a href="#" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="product-menu-box">
-          <div class="product-menu-img">
-            <img
-              src="images/menu-burger.jpg"
-              alt="Chicke Hawain Burger"
-              class="img-responsive img-curve"
-            />
-          </div>
-
-          <div class="product-menu-desc">
-            <h4>Nice Burger</h4>
-            <p class="product-price">$2.3</p>
-            <p class="product-detail">
-              Made with Italian Sauce, Chicken, and organic vegetables.
-            </p>
-            <br />
-
-            <a href="#" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="product-menu-box">
-          <div class="product-menu-img">
-            <img
-              src="images/menu-pizza.jpg"
-              alt="Chicke Hawain Pizza"
-              class="img-responsive img-curve"
-            />
-          </div>
-
-          <div class="product-menu-desc">
-            <h4>Product Title</h4>
-            <p class="product-price">$2.3</p>
-            <p class="product-detail">
-              Made with Italian Sauce, Chicken, and organic vegetables.
-            </p>
-            <br />
-
-            <a href="#" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="product-menu-box">
-          <div class="product-menu-img">
-            <img
-              src="images/menu-pizza.jpg"
-              alt="Chicke Hawain Pizza"
-              class="img-responsive img-curve"
-            />
-          </div>
-
-          <div class="product-menu-desc">
-            <h4>Product Title</h4>
-            <p class="product-price">$2.3</p>
-            <p class="product-detail">
-              Made with Italian Sauce, Chicken, and organic vegetables.
-            </p>
-            <br />
-
-            <a href="#" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="product-menu-box">
-          <div class="product-menu-img">
-            <img
-              src="images/menu-momo.jpg"
-              alt="Chicke Hawain Momo"
-              class="img-responsive img-curve"
-            />
-          </div>
-
-          <div class="product-menu-desc">
-            <h4>Chicken Steam Momo</h4>
-            <p class="product-price">$2.3</p>
-            <p class="product-detail">
-              Made with Italian Sauce, Chicken, and organic vegetables.
-            </p>
-            <br />
-
-            <a href="#" class="btn btn-primary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
-    </section>
-    <!-- PRODUCT MENU Section Ends Here -->
-
-    <!-- social Section Starts Here -->
-    <section class="social">
-      <div class="container text-center">
+      <div class="menu text-right">
         <ul>
           <li>
-            <a href="#"
-              ><img
-                src="https://img.icons8.com/fluent/50/000000/facebook-new.png"
-            /></a>
+            <a href="index.php">Home</a>
           </li>
           <li>
-            <a href="#"
-              ><img
-                src="https://img.icons8.com/fluent/48/000000/instagram-new.png"
-            /></a>
+            <a href="products.php">Products</a>
           </li>
           <li>
-            <a href="#"
-              ><img src="https://img.icons8.com/fluent/48/000000/twitter.png"
-            /></a>
+            <a href="select-login.html">Login</a>
           </li>
         </ul>
       </div>
-    </section>
-    <!-- social Section Ends Here -->
+      <div class="clearfix"></div>
+    </div>
+  </section>
+  <!-- Navbar Section Ends Here -->
 
-    <!-- footer Section Starts Here -->
-    <section class="footer">
-      <div class="container text-center"></div>
-    </section>
-    <!-- footer Section Ends Here -->
-  </body>
+  <!-- Product Search Section -->
+  <section class="products-search text-center">
+    <div class="container">
+      <form action="products-search.php" method="POST">
+        <input type="search" name="search" placeholder="Search for Products.." required />
+        <input type="submit" name="submit" value="Search" class="btn btn-primary" />
+      </form>
+    </div>
+  </section>
+
+ 
+  <section class="product-menu">
+    <div class="container">
+      <h2 class="text-center">All Products</h2>
+
+      <?php
+      include('dbConnection/connection.php'); // Include your database connection file
+
+      $sql = "SELECT * FROM tbl_products";
+      $res = mysqli_query($conn, $sql);
+
+      if ($res) {
+        while ($row = mysqli_fetch_assoc($res)) {
+          $product_title = $row['title'];
+          $product_price = $row['price'];
+          $product_description = $row['description'];
+          $product_image = $row['image_name'];
+      ?>
+          <div class="product-menu-box">
+            <div class="product-menu-img">
+              <img src="images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve" />
+            </div>
+            <div class="product-menu-desc">
+              <h4><?php echo $product_title; ?></h4>
+              <p class="product-price">$<?php echo $product_price; ?></p>
+              <p class="product-detail"><?php echo $product_description; ?></p>
+              <br />
+              <a href="customer/login.php?redirect=<?php echo urlencode($_SERVER['REQUEST_URI']); ?>" class="btn btn-order">Order Now</a>
+            </div>
+          </div>
+      <?php
+        }
+      }
+      ?>
+
+      <div class="clearfix"></div>
+    </div>
+
+</body>
+
 </html>
