@@ -32,7 +32,7 @@
         </form>
     </div>
 </div>
-<?php include('reusables/footer.php'); ?>
+
 
 
 <?php
@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
     $password = sha1($_POST['password']); // Password Encryption with MD5
 
     // 2. SQL Query to save the data into database
-    $sql = "INSERT INTO tbl_customer SET 
+    $sql = "INSERT INTO tbl_admin SET 
         full_name='$full_name',
         username='$username',
         password='$password'

@@ -19,7 +19,7 @@
         <ul>
           <li><a href="index.php">Home</a></li>
           <li><a href="products.php">Products</a></li>
-          <li><a href="select-login.html">Logdin</a></li>
+          <li><a href="select-login.html">Login</a></li>
         </ul>
       </div>
       <div class="clearfix"></div>
