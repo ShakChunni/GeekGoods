@@ -13,7 +13,6 @@ if (isset($_SESSION['customer_username'])) {
   header('location:' . SITEURL . 'customer/login.php');
 }
 
-echo $customer_username;
 ?>
 
 <!DOCTYPE html>

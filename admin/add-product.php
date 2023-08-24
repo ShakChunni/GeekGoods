@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
 
     // Move uploaded image to the desired directory
     if (!empty($image_name)) {
-        $upload_path = "../images/product" . $image_name;
+        $upload_path = "../images/product/" . $image_name;
         move_uploaded_file($temp_name, $upload_path);
     } else {
         // Set a default image if no image is uploaded

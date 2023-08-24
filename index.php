@@ -23,6 +23,9 @@
             <a href="index.php">Home</a>
           </li>
           <li>
+            <a href="category.php">Category</a>
+          </li>
+          <li>
             <a href="products.php">Products</a>
           </li>
           <li>
