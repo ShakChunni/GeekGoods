@@ -7,12 +7,12 @@ include('../dbConnection/connection.php');
 // Retrieve the customer ID from the session
 if (isset($_SESSION['customer_username'])) {
   $customer_username = $_SESSION['customer_username'];
-  // Use $customer_id as needed in your index.php
+  // store $customer username in variable
 } else {
   // Redirect to the login page if not logged in
   header('location:' . SITEURL . 'customer/login.php');
 }
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['login'])) { //show login message
   echo $_SESSION['login'];
   unset($_SESSION['login']);
 }

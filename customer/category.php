@@ -58,9 +58,9 @@
             </h2>
 
             <?php
-            include('../dbConnection/connection.php'); // Include your database connection file
+            include('../dbConnection/connection.php'); // database connection file
 
-            $sql = "SELECT * FROM tbl_category"; // Select all categories from the tbl_category table
+            $sql = "SELECT * FROM tbl_category WHERE active='Yes' "; // Select all categories from the tbl_category table
             $res = mysqli_query($conn, $sql);
 
             if ($res) {

@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- Important to make website responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeekGoods - Products</title>
   <link rel="stylesheet" href="../css/style.css">
@@ -58,7 +57,7 @@
         <div class="text-center-color">All Products</div>
       </h2>
       <?php
-      include('../dbConnection/connection.php'); // Include your database connection file
+      include('../dbConnection/connection.php'); // database connection
 
       $sql = "SELECT * FROM tbl_products WHERE active='Yes'";
       $res = mysqli_query($conn, $sql);
@@ -70,7 +69,8 @@
           $product_description = $row['description'];
           $product_image = $row['image_name'];
       ?>
-          <div class="product-menu-box">
+      <!-- showing products -->
+          <div class="product-menu-box"> 
             <div class="product-menu-img">
               <img src="../images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve" />
             </div>

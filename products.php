@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <!-- Navbar Section Starts Here -->
   <section class="navbar">
     <div class="container">
       <div class="logo">
@@ -36,9 +35,7 @@
       <div class="clearfix"></div>
     </div>
   </section>
-  <!-- Navbar Section Ends Here -->
 
-  <!-- Product Search Section -->
   <section class="products-search text-center">
     <div class="container">
       <form action="products-search.php" method="POST">
@@ -54,7 +51,7 @@
       <h2 class="text-center">All Products</h2>
 
       <?php
-      include('dbConnection/connection.php'); // Include your database connection file
+      include('dbConnection/connection.php'); 
 
       $sql = "SELECT * FROM tbl_products";
       $res = mysqli_query($conn, $sql);

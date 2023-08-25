@@ -30,13 +30,12 @@
       <div class="clearfix"></div>
     </div>
   </section>
-  <!-- Navbar Section Ends Here -->
 
-  <!-- PRODUCT SEARCH Section Starts Here -->
+
   <section class="products-search text-center">
     <div class="container">
       <?php
-      include('../dbConnection/connection.php'); // Include your database connection file
+      include('../dbConnection/connection.php'); // database connection 
 
       if (isset($_POST['search'])) {
         $searchKeyword = $_POST['search'];
@@ -44,7 +43,7 @@
         $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND title LIKE '%$searchKeyword%'";
         $res = mysqli_query($conn, $sql);
 
-        echo "<h2>Products on Your Search <a href='#' class='text-white'>\"$searchKeyword\"</a></h2>";
+        echo "<h2>Products on Your Search <a href='#' class='text-black'>\"$searchKeyword\"</a></h2>";
 
         if ($res) {
           while ($row = mysqli_fetch_assoc($res)) {
@@ -62,7 +61,7 @@
                 <p class="product-price">$<?php echo $product_price; ?></p>
                 <p class="product-detail"><?php echo $product_description; ?></p>
                 <br>
-                <a href="../order.php" class="btn btn-order">Order Now</a>
+                <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>" class="btn btn-order">Order Now</a>
               </div>
             </div>
       <?php
@@ -74,13 +73,6 @@
       ?>
       <div class="clearfix"></div>
     </div>
-  </section>
-  <!-- PRODUCT SEARCH Section Ends Here -->
-
-  <!-- Social Section -->
-  <section class="social">
-    <!-- ... Social media icons code ... -->
-  </section>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!-- Navbar Section Starts Here -->
+    
     <section class="navbar">
         <div class="container">
             <div class="logo">
@@ -36,7 +36,7 @@
             <div class="clearfix"></div>
         </div>
     </section>
-    <!-- Navbar Section Ends Here -->
+  
 
     <section class="products-search text-center">
         <div class="container">
@@ -47,11 +47,11 @@
         </div>
     </section>
 
-    <!-- Products Section -->
+  
     <section class="product-menu">
         <div class="container">
             <?php
-            include('dbConnection/connection.php'); // Include your database connection file
+            include('dbConnection/connection.php'); 
 
             if (isset($_GET['category_id'])) {
                 $selected_category_id = $_GET['category_id'];
@@ -78,7 +78,7 @@
                             $category_title = 'Uncategorized';
                         }
 
-                        // Display the product details with styling
+                        
                         echo '<div class="product-menu-box">';
                         echo '<div class="product-menu-img">';
                         echo '<img src="images/product/' . $product_image . '" alt="' . $product_title . '" class="img-responsive img-curve" />';

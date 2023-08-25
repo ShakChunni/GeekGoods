@@ -10,3 +10,4 @@
 
     $conn = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
     $db_select = mysqli_select_db($conn, 'geeksgoods');
+?>

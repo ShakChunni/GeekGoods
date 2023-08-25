@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact = $_POST['contact'];
     $email = $_POST['email'];
     $address = $_POST['address'];
-    $customer_username = $_POST['customer_username']; // Retrieve the customer's ID from hidden input field
+    $customer_username = $_POST['customer_username']; // Retrieve the customer's username
 
     
 

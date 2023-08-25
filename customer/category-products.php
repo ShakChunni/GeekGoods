@@ -53,12 +53,12 @@
     <section class="product-menu">
         <div class="container">
             <?php
-            include('../dbConnection/connection.php'); // Include your database connection file
+            include('../dbConnection/connection.php'); // database connection file
 
             if (isset($_GET['category_id'])) {
                 $selected_category_id = $_GET['category_id'];
 
-                $products_query = "SELECT * FROM tbl_products WHERE category_id='$selected_category_id'";
+                $products_query = "SELECT * FROM tbl_products WHERE category_id='$selected_category_id' AND active='Yes' ";
                 $products_result = mysqli_query($conn, $products_query);
 
                 if ($products_result && mysqli_num_rows($products_result) > 0) {

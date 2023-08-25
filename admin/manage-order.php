@@ -7,8 +7,8 @@
 
         <?php
         if (isset($_SESSION['order-delete'])) {
-            echo $_SESSION['order-delete']; // Displaying Session Message
-            unset($_SESSION['order-delete']); // Removing Session Message
+            echo $_SESSION['order-delete']; 
+            unset($_SESSION['order-delete']); 
         }
 
         if (isset($_SESSION['order-update'])) {
@@ -58,7 +58,7 @@
                         $customer_email = $rows['customer_email'];
                         $customer_address = $rows['customer_address'];
 
-                        // Display the values in our table
+                        // Display the values in table
             ?>
                         <tr>
                             <td><?php echo $serial++; ?></td>
@@ -74,7 +74,6 @@
                             <td><?php echo $customer_address; ?></td>
                             <td>
                                 <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete-order.php?id=<?php echo $id; ?>" class="btn-danger">Delete Order</a>
                             </td>
                         </tr>
             <?php

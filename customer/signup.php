@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
     $insert_result = mysqli_query($conn, $insert_query);
 
     if ($insert_result) {
-        $_SESSION['signup'] = "<div class='success text-center'>Signup Successful</div>"; // Just set a flag here
+        $_SESSION['signup'] = "<div class='success text-center'>Signup Successful</div>"; 
         header('location:' . SITEURL . 'customer/login.php');
         exit();
     } else {

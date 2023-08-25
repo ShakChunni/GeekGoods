@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Navbar Section Starts Here -->
+
   <section class="navbar">
     <div class="container">
       <div class="logo">
@@ -28,13 +28,11 @@
       <div class="clearfix"></div>
     </div>
   </section>
-  <!-- Navbar Section Ends Here -->
 
-  <!-- PRODUCT SEARCH Section Starts Here -->
   <section class="products-search text-center">
     <div class="container">
       <?php
-      include('dbConnection/connection.php'); // Include your database connection file
+      include('dbConnection/connection.php');
 
       if (isset($_POST['search'])) {
         $searchKeyword = $_POST['search'];
@@ -42,7 +40,7 @@
         $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND title LIKE '%$searchKeyword%'";
         $res = mysqli_query($conn, $sql);
 
-        echo "<h2>Products on Your Search <a href='#' class='text-white'>\"$searchKeyword\"</a></h2>";
+        echo "<h2>Products on Your Search <a href='#' class='text-black'>\"$searchKeyword\"</a></h2>";
 
         if ($res && mysqli_num_rows($res) > 0) {
           while ($row = mysqli_fetch_assoc($res)) {
@@ -52,7 +50,7 @@
             $product_image = $row['image_name'];
             $product_category_id = $row['category_id'];
 
-            // Retrieve category title based on category_id
+
             $category_query = "SELECT title FROM tbl_category WHERE id='$product_category_id'";
             $category_result = mysqli_query($conn, $category_query);
 
@@ -62,7 +60,7 @@
             } else {
               $category_title = 'Uncategorized';
             }
-            ?>
+      ?>
             <div class="product-menu-box">
               <div class="product-menu-img">
                 <img src="images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve">
@@ -75,10 +73,10 @@
                 <p class="product-price">$<?php echo $product_price; ?></p>
                 <p class="product-detail"><?php echo $product_description; ?></p>
                 <br>
-                <a href="order.php" class="btn btn-order">Order Now</a>
+                <a href="customer/login.php" class="btn btn-order">Order Now</a>
               </div>
             </div>
-          <?php
+      <?php
           }
         } else {
           echo "<p>No products found matching your search.</p>";
@@ -87,17 +85,6 @@
       ?>
       <div class="clearfix"></div>
     </div>
-  </section>
-  <!-- PRODUCT SEARCH Section Ends Here -->
-
-  <!-- Social Section -->
-  <section class="social">
-    <!-- ... Social media icons code ... -->
-  </section>
-
-  <!-- Footer Section -->
-  <section class="footer">
-    <!-- ... Footer section code ... -->
   </section>
 </body>
 

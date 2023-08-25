@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!-- Navbar Section Starts Here -->
+
     <section class="navbar">
         <div class="container">
             <div class="logo">
@@ -36,7 +36,6 @@
             <div class="clearfix"></div>
         </div>
     </section>
-    <!-- Navbar Section Ends Here -->
 
     <section class="products-search text-center">
         <div class="container">
@@ -50,12 +49,12 @@
     <!-- Categories Section -->
     <section class="product-menu">
         <div class="container">
-            <h2 class="text-center">All Categories</h2>
+            <h2 class="text-center">Browse by categories</h2>
 
             <?php
-            include('dbConnection/connection.php'); // Include your database connection file
+            include('dbConnection/connection.php');
 
-            $sql = "SELECT * FROM tbl_category"; // Select all categories from the tbl_category table
+            $sql = "SELECT * FROM tbl_category";
             $res = mysqli_query($conn, $sql);
 
             if ($res) {

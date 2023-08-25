@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <!-- Navbar Section Starts Here -->
     <section class="navbar">
     <div class="container">
       <div class="logo">
@@ -39,18 +38,18 @@
       <div class="clearfix"></div>
     </div>
   </section>
-    <!-- Navbar Section Ends Here -->
 
-    <!-- Order Form Section -->
+
+    <!-- Order Form -->
     <section class="order-form">
         <div class="container">
             <h2 class="text-center">Order Now</h2>
 
             <?php
-            include('../dbConnection/connection.php'); // Include your database connection file
+            include('../dbConnection/connection.php'); // database connection file
             if (isset($_SESSION['customer_username'])) {
                 $customer_username = $_SESSION['customer_username'];
-                // Use $customer_id as needed in your index.php
+                // Use $customer_u as needed in your index.php
               } else {
                 // Redirect to the login page if not logged in
                 header('location:' . SITEURL . 'customer/login.php');

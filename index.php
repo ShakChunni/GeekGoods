@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Navbar Section Starts Here -->
+  
   <section class="navbar">
     <div class="container">
       <div class="logo">
@@ -36,9 +36,7 @@
       <div class="clearfix"></div>
     </div>
   </section>
-  <!-- Navbar Section Ends Here -->
 
-  <!-- Product Search Section -->
   <section class="products-search text-center">
     <div class="container">
       <form action="products-search.php" method="POST">
@@ -48,13 +46,14 @@
     </div>
   </section>
 
-  <!-- Featured Product Section -->
+
+
   <section class="product-menu">
     <div class="container">
       <h2 class="text-center">Featured Products</h2>
 
       <?php
-      include('dbConnection/connection.php'); // Include your database connection file
+      include('dbConnection/connection.php'); 
 
       $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND featured='Yes' LIMIT 6";
       $res = mysqli_query($conn, $sql);
@@ -65,9 +64,9 @@
           $product_price = $row['price'];
           $product_description = $row['description'];
           $product_image = $row['image_name'];
-          $product_category_id = $row['category_id']; // Retrieve category ID from tbl_products
+          $product_category_id = $row['category_id']; 
 
-          // Retrieve category title based on category_id
+          // Retriving category title based on category_id
           $category_query = "SELECT title FROM tbl_category WHERE id='$product_category_id'";
           $category_result = mysqli_query($conn, $category_query);
 

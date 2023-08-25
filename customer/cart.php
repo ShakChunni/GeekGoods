@@ -1,18 +1,15 @@
 <?php
-
-
-// Include the database connection
+// database connection
 include('../dbConnection/connection.php');
 
 // Redirect to the login page if not logged in
 if (isset($_SESSION['customer_username'])) {
     $customer_username = $_SESSION['customer_username'];
-    // Use $customer_id as needed in your index.php
+    // storing customer username
 } else {
     // Redirect to the login page if not logged in
     header('location:' . SITEURL . 'customer/login.php');
 }
-
 
 // Retrieve orders for the logged-in customer
 $sql = "SELECT * FROM tbl_order WHERE customer_username='$customer_username'";
@@ -28,7 +25,6 @@ $result = mysqli_query($conn, $sql);
     <title>Your Cart</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Additional Cart Page Styles */
 
         .cart {
             background-color: #f9f9f9;
@@ -103,7 +99,7 @@ $result = mysqli_query($conn, $sql);
         </div>
     </section>
 
-    <!-- Cart Section -->
+    <!-- Cart Table -->
     <section class="cart">
         <div class="container">
             <div class="cart-table">
@@ -143,5 +139,4 @@ $result = mysqli_query($conn, $sql);
         </div>
     </section>
 </body>
-
 </html>
