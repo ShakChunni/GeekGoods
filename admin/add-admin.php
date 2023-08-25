@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     // 1. Get the data from form
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
-    $password = sha1($_POST['password']); // Password Encryption with MD5
+    $password = sha1($_POST['password']); // Password hashing with sha1
 
     // 2. SQL Query to save the data into database
     $sql = "INSERT INTO tbl_admin SET 

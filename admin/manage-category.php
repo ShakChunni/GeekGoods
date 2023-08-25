@@ -20,9 +20,6 @@
             echo $_SESSION['update'];
             unset($_SESSION['update']);
         }
-
-        // Additional session messages can be handled similarly
-
         ?>
 
         <br /><br /><br />

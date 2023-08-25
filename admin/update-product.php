@@ -6,7 +6,7 @@
         <br><br>
 
         <?php
-        // 1. Get the ID of Selected Product
+        // Get the ID of Selected Product
         $id = $_GET['id'];
         $sql = "SELECT * FROM tbl_products WHERE id=$id";
         $res = mysqli_query($conn, $sql);

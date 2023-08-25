@@ -4,7 +4,7 @@ include('../dbConnection/connection.php');
 
 if (isset($_SESSION['customer_username'])) {
     $customer_username = $_SESSION['customer_username'];
-    // Use $customer_id as needed in your index.php
+    // Username storing in $customer_username
   } else {
     // Redirect to the login page if not logged in
     header('location:' . SITEURL . 'customer/login.php');
