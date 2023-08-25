@@ -49,7 +49,7 @@
             include('../dbConnection/connection.php'); // database connection file
             if (isset($_SESSION['customer_username'])) {
                 $customer_username = $_SESSION['customer_username'];
-                // Use $customer_u as needed in your index.php
+                // storing cutomer username stored in login
               } else {
                 // Redirect to the login page if not logged in
                 header('location:' . SITEURL . 'customer/login.php');
@@ -87,7 +87,7 @@
                     
                     <input type="hidden" name="product_title" value="<?php echo $product_title; ?>" />
                     <input type="hidden" name="product_price" value="<?php echo $product_price; ?>" />
-                    <input type="hidden" name="customer_username" value="<?php echo $customer_username; ?>" /> <!-- Using the customer_id retrieved earlier -->
+                    <input type="hidden" name="customer_username" value="<?php echo $customer_username; ?>" /> <!-- Using the customer username retrieved earlier -->
 
                     <label for="quantity">Quantity:</label>
                     <input type="number" name="quantity" id="quantity" min="1" required />

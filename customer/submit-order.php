@@ -9,7 +9,6 @@ if (isset($_SESSION['customer_username'])) {
     // Redirect to the login page if not logged in
     header('location:' . SITEURL . 'customer/login.php');
   }
-  echo $customer_username; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data

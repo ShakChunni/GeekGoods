@@ -69,17 +69,6 @@
                         $product_image = $product_row['image_name'];
                         $product_category_id = $product_row['category_id'];
 
-                        // Retrieve category title based on category_id
-                        $category_query = "SELECT title FROM tbl_category WHERE id='$product_category_id'";
-                        $category_result = mysqli_query($conn, $category_query);
-
-                        if ($category_result && mysqli_num_rows($category_result) > 0) {
-                            $category_row = mysqli_fetch_assoc($category_result);
-                            $category_title = $category_row['title'];
-                        } else {
-                            $category_title = 'Uncategorized';
-                        }
-
                         // Display the product details with styling
                         echo '<div class="product-menu-box">';
                         echo '<div class="product-menu-img">';

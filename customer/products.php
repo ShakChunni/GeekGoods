@@ -69,8 +69,8 @@
           $product_description = $row['description'];
           $product_image = $row['image_name'];
       ?>
-      <!-- showing products -->
-          <div class="product-menu-box"> 
+          <!-- showing products -->
+          <div class="product-menu-box">
             <div class="product-menu-img">
               <img src="../images/product/<?php echo $product_image; ?>" alt="<?php echo $product_title; ?>" class="img-responsive img-curve" />
             </div>
@@ -79,7 +79,8 @@
               <p class="product-price">$<?php echo $product_price; ?></p>
               <p class="product-detail"><?php echo $product_description; ?></p>
               <br />
-              <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>" class="btn btn-order">Order Now</a>
+              <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>" class="btn btn-order">
+                Order Now</a>
             </div>
           </div>
       <?php
