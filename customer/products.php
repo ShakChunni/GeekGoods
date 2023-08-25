@@ -60,7 +60,7 @@
       <?php
       include('../dbConnection/connection.php'); // Include your database connection file
 
-      $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND featured='Yes' LIMIT 6";
+      $sql = "SELECT * FROM tbl_products WHERE active='Yes'";
       $res = mysqli_query($conn, $sql);
 
       if ($res) {
@@ -88,23 +88,7 @@
       ?>
       <div class="clearfix"></div>
     </div>
-    <p class="text-center">
-      <a href="products.php">See All Products</a>
-    </p>
   </section>
-  <!-- PRODUCT MENU Section Ends Here -->
-
-  <!-- social Section Starts Here -->
-  <section class="social">
-    <!-- ... Social media icons code ... -->
-  </section>
-  <!-- social Section Ends Here -->
-
-  <!-- footer Section Starts Here -->
-  <section class="footer">
-    <!-- ... Footer section code ... -->
-  </section>
-  <!-- footer Section Ends Here -->
 </body>
 
 </html>

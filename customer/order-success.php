@@ -23,11 +23,6 @@
             <a href="cart.php" class="btn btn-primary">View Your Orders</a>
         </div>
     </section>
-
-    <!-- Footer Section -->
-    <section class="footer">
-        <!-- ... Footer section code ... -->
-    </section>
 </body>
 
 </html>

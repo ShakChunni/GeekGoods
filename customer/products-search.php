@@ -81,11 +81,6 @@
   <section class="social">
     <!-- ... Social media icons code ... -->
   </section>
-
-  <!-- Footer Section -->
-  <section class="footer">
-    <!-- ... Footer section code ... -->
-  </section>
 </body>
 
 </html>

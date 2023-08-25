@@ -84,4 +84,3 @@
         <div class="clearfix"></div>
     </div>
 </div>
-<?php include('reusables/footer.php'); ?>

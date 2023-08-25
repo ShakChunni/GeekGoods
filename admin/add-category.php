@@ -40,7 +40,7 @@
         </form>
     </div>
 </div>
-<?php include('reusables/footer.php'); ?>
+
 
 <?php
 if (isset($_POST['submit'])) {
@@ -52,9 +52,10 @@ if (isset($_POST['submit'])) {
     // Uploading the image
     $image_name = $_FILES['image']['name'];
     $tmp_name = $_FILES['image']['tmp_name'];
-    $upload_path = "../images/category";
+    $upload_path = "../images/category/";
 
     move_uploaded_file($tmp_name, $upload_path . $image_name);
+
 
     $sql = "INSERT INTO tbl_category (title, image_name, featured, active)
             VALUES ('$category_title', '$image_name', '$featured', '$active')";

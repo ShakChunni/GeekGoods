@@ -44,4 +44,3 @@
 </div>
 
 
-<?php include('reusables/footer.php'); ?>

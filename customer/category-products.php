@@ -28,7 +28,10 @@
                         <a href="products.php">Products</a>
                     </li>
                     <li>
-                        <a href="select-login.html">Login</a>
+                        <a href="logout.php">Logout</a>
+                    </li>
+                    <li>
+                        <a href="cart.php">Cart</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +90,7 @@
                         echo '<p class="product-price">$' . $product_price . '</p>';
                         echo '<p class="product-detail">' . $product_description . '</p>';
                         echo '<br />';
-                        echo '<a href="customer/login.php?redirect=' . urlencode($_SERVER['REQUEST_URI']) . '" class="btn btn-order">Order Now</a>';
+                        echo '<a href="order.php?product_title=' . urlencode($product_title) . '&product_price=' . urlencode($product_price) . '" class="btn btn-order">Order Now</a>';
                         echo '</div>';
                         echo '</div>';
                     }

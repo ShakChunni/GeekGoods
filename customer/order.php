@@ -110,11 +110,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer Section -->
-    <section class="footer">
-        <!-- ... Footer section code ... -->
-    </section>
 </body>
 
 </html>

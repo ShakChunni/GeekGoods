@@ -105,4 +105,4 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<?php include('reusables/footer.php'); ?>
+

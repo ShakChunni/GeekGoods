@@ -73,7 +73,7 @@
         </form>
     </div>
 </div>
-<?php include('reusables/footer.php'); ?>
+
 
 <?php
 if (isset($_POST['submit'])) {

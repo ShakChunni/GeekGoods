@@ -8,10 +8,10 @@ include('../dbConnection/connection.php');
 if (isset($_SESSION['customer_username'])) {
     $customer_username = $_SESSION['customer_username'];
     // Use $customer_id as needed in your index.php
-  } else {
+} else {
     // Redirect to the login page if not logged in
     header('location:' . SITEURL . 'customer/login.php');
-  }
+}
 
 
 // Retrieve orders for the logged-in customer
@@ -73,11 +73,35 @@ $result = mysqli_query($conn, $sql);
 </head>
 
 <body>
-    <!-- Navbar Section Starts Here -->
     <section class="navbar">
-        <!-- ... Navbar section code ... -->
+        <div class="container">
+            <div class="logo">
+                <a href="index.php" title="Logo">
+                    <img src="../images/logo.jpg" class="img-responsive" />
+                </a>
+            </div>
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="category.php">Category</a>
+                    </li>
+                    <li>
+                        <a href="products.php">Products</a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Logout</a>
+                    </li>
+                    <li>
+                        <a href="cart.php">Cart</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </section>
-    <!-- Navbar Section Ends Here -->
 
     <!-- Cart Section -->
     <section class="cart">
@@ -117,11 +141,6 @@ $result = mysqli_query($conn, $sql);
                 </table>
             </div>
         </div>
-    </section>
-
-    <!-- Footer Section -->
-    <section class="footer">
-        <!-- ... Footer section code ... -->
     </section>
 </body>
 
