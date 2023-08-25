@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <!-- Important to make website responsive -->
@@ -7,29 +8,39 @@
   <title>GeekGoods - Products</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-  <!-- Navbar Section Starts Here -->
   <section class="navbar">
     <div class="container">
       <div class="logo">
         <a href="index.php" title="Logo">
-          <img src="../images/logo.jpg" class="img-responsive">
+          <img src="../images/logo.jpg" class="img-responsive" />
         </a>
       </div>
       <div class="menu text-right">
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="categories.php">Categories</a></li>
-          <li><a href="products.php">Products</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>
+            <a href="index.php">Home</a>
+          </li>
+          <li>
+            <a href="category.php">Category</a>
+          </li>
+          <li>
+            <a href="products.php">Products</a>
+          </li>
+          <li>
+            <a href="logout.php">Logout</a>
+          </li>
+          <li>
+            <a href="cart.php">Cart</a>
+          </li>
         </ul>
       </div>
       <div class="clearfix"></div>
     </div>
   </section>
-  <!-- Navbar Section Ends Here -->
 
-  <!-- PRODUCT SEARCH Section Starts Here -->
+
   <section class="products-search text-center">
     <div class="container">
       <form action="products-search.php" method="POST">
@@ -38,12 +49,14 @@
       </form>
     </div>
   </section>
-  <!-- PRODUCT SEARCH Section Ends Here -->
 
-<!-- Product Menu Section -->
-<section class="product-menu">
+
+
+  <section class="product-menu">
     <div class="container">
-      <!-- Loop through your products -->
+      <h2 class="text-center">
+        <div class="text-center-color">All Products</div>
+      </h2>
       <?php
       include('../dbConnection/connection.php'); // Include your database connection file
 
@@ -93,4 +106,5 @@
   </section>
   <!-- footer Section Ends Here -->
 </body>
+
 </html>

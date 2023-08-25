@@ -11,8 +11,34 @@
 <body>
     <!-- Navbar Section Starts Here -->
     <section class="navbar">
-        <!-- ... Navbar section code ... -->
-    </section>
+    <div class="container">
+      <div class="logo">
+        <a href="index.php" title="Logo">
+          <img src="../images/logo.jpg" class="img-responsive" />
+        </a>
+      </div>
+      <div class="menu text-right">
+        <ul>
+          <li>
+            <a href="index.php">Home</a>
+          </li>
+          <li>
+            <a href="category.php">Category</a>
+          </li>
+          <li>
+            <a href="products.php">Products</a>
+          </li>
+          <li>
+            <a href="logout.php">Logout</a>
+          </li>
+          <li>
+            <a href="cart.php">Cart</a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </section>
     <!-- Navbar Section Ends Here -->
 
     <!-- Order Form Section -->

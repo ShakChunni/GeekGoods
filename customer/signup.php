@@ -38,7 +38,14 @@
 if (isset($_POST['submit'])) {
     $full_name = $_POST['fullname'];
     $username = $_POST['username'];
-    $password = sha1($_POST['password']); // Please consider using more secure methods for password hashing
+    $password = sha1($_POST['password']); 
+
+    // Check if any of the fields are empty
+    if (empty($full_name) || empty($username) || empty($_POST['password'])) {
+        $_SESSION['signup'] = "<div class='error text-center'>Please fill up all fields properly</div>";
+        header('location:' . SITEURL . 'customer/signup.php');
+        exit();
+    }
 
     // Check if the username already exists
     $check_query = "SELECT * FROM tbl_customer WHERE username='$username'";
@@ -54,7 +61,7 @@ if (isset($_POST['submit'])) {
     $insert_result = mysqli_query($conn, $insert_query);
 
     if ($insert_result) {
-        $_SESSION['signup'] = "success"; // Just set a flag here
+        $_SESSION['signup'] = "<div class='success text-center'>Signup Successful</div>"; // Just set a flag here
         header('location:' . SITEURL . 'customer/login.php');
         exit();
     } else {

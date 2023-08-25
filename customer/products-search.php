@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeekGoods - Search Results</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-  <!-- Navbar Section Starts Here -->
+
   <section class="navbar">
     <div class="container">
       <div class="logo">
@@ -18,6 +20,9 @@
       <div class="menu text-right">
         <ul>
           <li><a href="index.php">Home</a></li>
+          <li>
+            <a href="category.php">Category</a>
+          </li>
           <li><a href="products.php">Products</a></li>
           <li><a href="select-login.html">Login</a></li>
         </ul>
@@ -35,7 +40,7 @@
 
       if (isset($_POST['search'])) {
         $searchKeyword = $_POST['search'];
-        
+
         $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND title LIKE '%$searchKeyword%'";
         $res = mysqli_query($conn, $sql);
 
@@ -82,4 +87,5 @@
     <!-- ... Footer section code ... -->
   </section>
 </body>
+
 </html>

@@ -12,6 +12,10 @@ if (isset($_SESSION['customer_username'])) {
   // Redirect to the login page if not logged in
   header('location:' . SITEURL . 'customer/login.php');
 }
+if (isset($_SESSION['login'])) {
+  echo $_SESSION['login'];
+  unset($_SESSION['login']);
+}
 
 ?>
 
@@ -26,11 +30,11 @@ if (isset($_SESSION['customer_username'])) {
 </head>
 
 <body>
-  <!-- Navbar Section Starts Here -->
+
   <section class="navbar">
     <div class="container">
       <div class="logo">
-        <a href="#" title="Logo">
+        <a href="index.php" title="Logo">
           <img src="../images/logo.jpg" class="img-responsive" />
         </a>
       </div>
@@ -38,6 +42,9 @@ if (isset($_SESSION['customer_username'])) {
         <ul>
           <li>
             <a href="index.php">Home</a>
+          </li>
+          <li>
+            <a href="category.php">Category</a>
           </li>
           <li>
             <a href="products.php">Products</a>
@@ -53,9 +60,9 @@ if (isset($_SESSION['customer_username'])) {
       <div class="clearfix"></div>
     </div>
   </section>
-  <!-- Navbar Section Ends Here -->
 
-  <!-- Product Search Section -->
+
+
   <section class="products-search text-center">
     <div class="container">
       <form action="products-search.php" method="POST">
@@ -65,10 +72,12 @@ if (isset($_SESSION['customer_username'])) {
     </div>
   </section>
 
-  <!-- Featured Product Section -->
+
   <section class="product-menu">
     <div class="container">
-      <h2 class="text-center">Featured Products</h2>
+      <h2 class="text-center">
+        <div class="text-center-color">Featured Products</div>
+      </h2>
 
       <?php
       $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND featured='Yes' LIMIT 6";
@@ -90,7 +99,7 @@ if (isset($_SESSION['customer_username'])) {
               <p class="product-price">$<?php echo $product_price; ?></p>
               <p class="product-detail"><?php echo $product_description; ?></p>
               <br />
-             
+
               <a href="order.php?product_title=<?php echo urlencode($product_title); ?>&product_price=<?php echo urlencode($product_price); ?>&customer_username=<?php echo $customer_username; ?>" class="btn btn-order">Order Now</a>
             </div>
           </div>
@@ -105,16 +114,6 @@ if (isset($_SESSION['customer_username'])) {
     <p class="text-center">
       <a href="products.php">See All Products</a>
     </p>
-  </section>
-
-  <!-- Social Section -->
-  <section class="social">
-    <!-- ... Social media icons code ... -->
-  </section>
-
-  <!-- Footer Section -->
-  <section class="footer">
-    <!-- ... Footer section code ... -->
   </section>
 </body>
 

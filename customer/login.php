@@ -4,28 +4,26 @@ include('../dbConnection/connection.php');
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>GeekGoods - Customer Login</title>
     <link rel="stylesheet" href="../css/login.css">
 </head>
+
 <body>
     <div class="login">
         <h1 class="text-center">Customer Login</h1>
         <br><br>
 
         <?php
-        if (isset($_SESSION['login'])) {
-            echo $_SESSION['login'];
-            unset($_SESSION['login']);
+        if (isset($_SESSION['no-login'])) {
+            echo $_SESSION['no-login'];
+            unset($_SESSION['no-login']);
         }
-        if (isset($_SESSION['no-login-message'])) {
-            echo $_SESSION['no-login-message'];
-            unset($_SESSION['no-login-message']);
-        }
-        
+
         // Show "Signup Successful" message from signup.php
-        if (isset($_SESSION['signup']) && $_SESSION['signup'] === "success") {
-            echo "<div class='success text-center'>Signup Successful</div>";
+        if (isset($_SESSION['signup'])) {
+            echo $_SESSION['signup'];
             unset($_SESSION['signup']);
         }
         ?>
@@ -57,16 +55,18 @@ include('../dbConnection/connection.php');
 
         if ($count == 1) {
             $row = mysqli_fetch_assoc($res);
-            $_SESSION['customer_username'] = $row['username']; // Store customer ID in the session
+            $_SESSION['customer_username'] = $row['username']; // Store customer username in the session
 
             $_SESSION['login'] = "<div class='success text-center'>Login Successful</div>";
             // Redirect to customer dashboard or homepage
             header('location:' . SITEURL . 'customer/index.php');
         } else {
-            $_SESSION['login'] = "<div class='error text-center'>Login Failed</div>";
+            $_SESSION['no-login'] = "<div class='error text-center'>Login Failed</div>";
+            // again Redirect to customer login page
             header('location:' . SITEURL . 'customer/login.php');
         }
     }
     ?>
 </body>
+
 </html>

@@ -14,7 +14,7 @@
     <div class="container">
       <div class="logo">
         <a href="index.php" title="Logo">
-          <img src="images/logo.jpg" class="img-responsive" />
+          <img src="images/logo.jpg" alt="GeekGoods" class="img-responsive" />
         </a>
       </div>
       <div class="menu text-right">
