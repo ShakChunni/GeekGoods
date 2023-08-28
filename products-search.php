@@ -37,7 +37,7 @@
       if (isset($_POST['search'])) {
         $searchKeyword = $_POST['search'];
 
-        $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND title LIKE '%$searchKeyword%'";
+        $sql = "SELECT * FROM tbl_products WHERE active='Yes' AND title LIKE '%$searchKeyword%'"; //used this command to match and see
         $res = mysqli_query($conn, $sql);
 
         echo "<h2>Products on Your Search <a href='#' class='text-black'>\"$searchKeyword\"</a></h2>";
